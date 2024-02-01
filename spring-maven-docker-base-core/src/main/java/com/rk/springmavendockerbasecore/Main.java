@@ -1,4 +1,4 @@
-package com.rk;
+package com.rk.springmavendockerbasecore;
 
 public class Main {
 

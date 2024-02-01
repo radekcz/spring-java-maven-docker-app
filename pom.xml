@@ -5,6 +5,10 @@
   <groupId>com.rk</groupId>
   <artifactId>spring-maven-docker-base</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>spring-maven-docker-base</name>
+    <packaging>pom</packaging>
+    <name>spring-maven-docker-base</name>
+    <modules>
+        <module>spring-maven-docker-base-core</module>
+    </modules>
 
 </project>

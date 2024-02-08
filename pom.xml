@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
     <name>spring-maven-docker-base</name>
     <modules>
-        <module>spring-maven-docker-base-core</module>
+        <module>core</module>
     </modules>
 
     <parent>

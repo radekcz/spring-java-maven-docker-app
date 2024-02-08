@@ -9,9 +9,9 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableConfigurationProperties({ApplicationProperties.class})
 @SpringBootApplication
 @ComponentScan({" com.rk.springmavendockerbasecore"})
-public class Application {
+public class WebApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(WebApp.class, args);
     }
 }

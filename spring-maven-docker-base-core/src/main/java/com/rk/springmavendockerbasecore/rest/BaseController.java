@@ -16,9 +16,9 @@ public class BaseController {
     private final BaseService baseService;
 
     @GetMapping(value = "ping")
-    public String hello() {
+    public String ping() {
         log.info("Hello from /api/ping.");
-        return baseService.handleHello();
+        return baseService.handlePing();
     }
 
     @GetMapping(value = "version")

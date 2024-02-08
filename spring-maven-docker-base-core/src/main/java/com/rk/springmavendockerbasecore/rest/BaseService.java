@@ -10,7 +10,7 @@ public class BaseService {
 
     private final ApplicationProperties applicationProperties;
 
-    public String handleHello() {
+    public String handlePing() {
         return "Hello from BaseService.";
     }
 

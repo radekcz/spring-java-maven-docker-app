@@ -20,4 +20,9 @@ public class BaseController {
         log.info("Hello from /api/ping.");
         return baseService.handleHello();
     }
+
+    @GetMapping(value = "version")
+    public String getVersion() {
+        return baseService.getVersionFromProperties();
+    }
 }

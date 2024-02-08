@@ -2,7 +2,6 @@ package com.rk.springmavendockerbasecore.rest;
 
 import com.rk.springmavendockerbasecore.rest.model.ApplicationProperties;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor

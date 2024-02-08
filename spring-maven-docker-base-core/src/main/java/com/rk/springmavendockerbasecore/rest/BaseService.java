@@ -11,7 +11,7 @@ public class BaseService {
     private final ApplicationProperties applicationProperties;
 
     public String handlePing() {
-        return "Hello from BaseService.";
+        return "Hello from BaseService";
     }
 
     public String getVersionFromProperties() {

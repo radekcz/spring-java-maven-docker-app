@@ -17,12 +17,30 @@
         <version>3.2.2</version>
     </parent>
 
+    <properties>
+        <lombok.version>1.18.30</lombok.version>
+        <spock.version>2.4-M1-groovy-4.0</spock.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.30</version>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- test -->
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-core</artifactId>
+                <version>${spock.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.spockframework</groupId>
+                <artifactId>spock-spring</artifactId>
+                <version>${spock.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

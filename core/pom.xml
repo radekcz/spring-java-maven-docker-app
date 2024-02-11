@@ -45,7 +45,6 @@
             <artifactId>spock-spring</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
 </project>

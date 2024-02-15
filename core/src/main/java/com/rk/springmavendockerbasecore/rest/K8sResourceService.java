@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @NoArgsConstructor
@@ -23,6 +22,6 @@ public class K8sResourceService {
                 .range(0, count)
                 .boxed()
                 .map(i -> String.format("%s-pod-%s", namespace, i))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

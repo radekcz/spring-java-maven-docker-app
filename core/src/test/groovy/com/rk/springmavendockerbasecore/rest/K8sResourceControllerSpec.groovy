@@ -14,9 +14,15 @@ class K8sResourceControllerSpec extends Specification {
     @Autowired
     MockMvc mvc
 
-    def "should return pods"() {
+    def "should return all pods"() {
         expect:
         mvc.perform(get("/api/v1/pods"))
+                .andExpect(status().isOk())
+    }
+
+    def "should return pods for specific namespace"() {
+        expect:
+        mvc.perform(get("/api/v1/pods?namespace=compute"))
                 .andExpect(status().isOk())
     }
 }

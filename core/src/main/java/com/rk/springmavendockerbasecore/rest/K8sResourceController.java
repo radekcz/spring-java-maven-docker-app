@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class K8sResourceController {
     private final K8sResourceService k8sResourceService;
 
     @GetMapping(value = "pods")
-    public List<String> listPods() {
-        return k8sResourceService.getPods();
+    public List<String> listPods(@RequestParam(required = false) String namespace) {
+        return k8sResourceService.getPods(namespace);
     }
 }

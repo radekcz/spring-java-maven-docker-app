@@ -13,11 +13,11 @@ public class K8sResourceService {
 
     public List<String> getPods(String namespace) {
         return Optional.ofNullable(namespace)
-                .map(n -> generatePods(n, 2))
+                .map(n -> generatePodsForNamespace(n, 2))
                 .orElse(List.of("pod1", "pod2", "pod3"));
     }
 
-    private List<String> generatePods(String namespace, int count) {
+    private List<String> generatePodsForNamespace(String namespace, int count) {
         return IntStream
                 .range(0, count)
                 .boxed()

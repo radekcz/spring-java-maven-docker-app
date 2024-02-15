@@ -10,7 +10,7 @@ class K8sResourceServiceSpec extends Specification {
         def pods = service.getPods(null)
 
         then:
-        pods.size() == 3
+        pods.size() == 10
     }
 
     def "should list pods for specific namespace"() {
@@ -20,5 +20,6 @@ class K8sResourceServiceSpec extends Specification {
 
         then:
         pods.size() == 2
+        pods.forEach {it -> it.contains("compute")}
     }
 }

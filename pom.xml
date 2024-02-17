@@ -6,7 +6,7 @@
     <artifactId>spring-maven-docker-base-app</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>spring-maven-docker-base</name>
+    <name>spring-maven-docker-base-app</name>
     <modules>
         <module>core</module>
     </modules>

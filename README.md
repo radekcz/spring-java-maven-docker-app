@@ -19,7 +19,7 @@ To get started with this project, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/radekcz/spring-maven-docker-base.git
+   git clone https://github.com/radekcz/spring-maven-docker-base-app.git
 
 2. **Build the application using Maven:**
    ```bash

@@ -2,6 +2,9 @@
 
 - This is a basic template for a Spring Boot application set up with Maven and Docker.
 - It provides a starting point for building and running Spring Boot applications in a Docker containerized environment.
+- This project includes usage of various Spring modules. You can utilize these examples as reference implementations or as starting points for your own modules within your Spring Boot application. Used Spring modules:
+  - Spring Web
+  - Spring Security (will be added soon)
 
 
 ## Getting Started

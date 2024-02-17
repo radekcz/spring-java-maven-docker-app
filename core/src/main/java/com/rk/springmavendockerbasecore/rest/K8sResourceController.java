@@ -13,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @Slf4j
-@RequestMapping(path = "api/v1", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path = "api/v1/k8s", produces = MediaType.APPLICATION_JSON_VALUE)
 public class K8sResourceController {
 
     private final K8sResourceService k8sResourceService;

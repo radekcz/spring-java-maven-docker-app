@@ -18,7 +18,7 @@ To get started with this project, follow these steps:
 2. **Build the application using Maven:**
    ```bash
    cd spring-maven-docker-base
-   mvn clean package
+   ./mvnw clean package
 
 3. **Build the Docker image:**
    ```bash

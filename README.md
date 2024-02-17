@@ -6,6 +6,12 @@
   - Spring Web
   - Spring Security (will be added soon)
 
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Docker installed on your machine
+
 
 ## Getting Started
 

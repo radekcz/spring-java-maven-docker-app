@@ -17,3 +17,10 @@ To get started with this project, follow these steps:
    cd spring-maven-docker-base
    mvn clean package
 
+3. **Build the Docker image:**
+   ```bash
+   docker build -t spring-maven-docker-base-app .
+
+4. **Run the Docker image:**
+   ```bash
+   docker run -p 8080:8080 spring-maven-docker-base-app

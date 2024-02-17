@@ -30,3 +30,9 @@ This will start the Spring Boot application inside a Docker container and expose
 5. **Access the application:**
 
 Open your web browser and navigate to http://localhost:8080 to access the running Spring Boot application.
+
+## Usage
+This template provides a basic Spring Boot application. You can extend it by adding your own controllers, services, repositories, etc., based on your project requirements.
+
+## Contributing
+If you find any issues with this template or have suggestions for improvements, please feel free to open an issue or submit a pull request.

@@ -10,7 +10,7 @@ public class EnumMappingConfiguration implements WebMvcConfigurer {
 
     /**
      * ApplicationConversionService registers multiple built-in converters and also StringToEnumIgnoringCaseConverterFactory:
-     * that allows out-of-the-box to handle an enum as case-insensitive objects
+     * that provides us out-of-the-box with handling enums as case-insensitive objects
      *
      */
     @Override

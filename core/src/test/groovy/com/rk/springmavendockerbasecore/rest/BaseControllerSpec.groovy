@@ -30,7 +30,7 @@ class BaseControllerSpec extends Specification {
                 .andExpect(status().isOk())
 
         where:
-        profile << ['QA', 'DEV', 'PROD']
+        profile << ['QA', 'DEV', 'PROD', 'qa']
     }
 
     def "ping endpoint should return message"() {

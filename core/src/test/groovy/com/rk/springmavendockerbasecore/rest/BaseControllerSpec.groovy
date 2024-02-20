@@ -17,12 +17,6 @@ class BaseControllerSpec extends Specification {
     @Autowired
     MockMvc mvc
 
-    def "set profile endpoint returns bad request when parameter profile is missing"() {
-        expect:
-        mvc.perform(post("/api/v1/profile"))
-                .andExpect(status().is4xxClientError())
-    }
-
     @Unroll
     def "should set profile #profile"() {
         expect:
@@ -30,7 +24,22 @@ class BaseControllerSpec extends Specification {
                 .andExpect(status().isOk())
 
         where:
-        profile << ['QA', 'DEV', 'PROD', 'qa']
+        profile << ['DEV', 'QA', 'PROD', 'dev', 'qa', 'prod']
+    }
+
+    @Unroll
+    def "set profile endpoint returns bad request when parameter profile does not match Profile enum"() {
+        expect:
+        mvc.perform(post("/api/v1/profile?profile=${profile}"))
+                .andExpect(status().is4xxClientError())
+        where:
+        profile << ['unknown', 'devprodqa']
+    }
+
+    def "set profile endpoint returns bad request when parameter profile is missing"() {
+        expect:
+        mvc.perform(post("/api/v1/profile"))
+                .andExpect(status().is4xxClientError())
     }
 
     def "ping endpoint should return message"() {

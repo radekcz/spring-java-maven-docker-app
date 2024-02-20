@@ -33,7 +33,7 @@ class BaseControllerSpec extends Specification {
         mvc.perform(post("/api/v1/profile?profile=${profile}"))
                 .andExpect(status().is4xxClientError())
         where:
-        profile << ['unknown', 'devprodqa']
+        profile << ['null', 'unknown', 'devprodqa']
     }
 
     def "set profile endpoint returns bad request when parameter profile is missing"() {

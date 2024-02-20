@@ -28,7 +28,7 @@ class BaseControllerSpec extends Specification {
     }
 
     @Unroll
-    def "set profile endpoint returns bad request when parameter profile does not match Profile enum"() {
+    def "set profile endpoint returns bad request when parameter profile does not match Profile-enum"() {
         expect:
         mvc.perform(post("/api/v1/profile?profile=${profile}"))
                 .andExpect(status().is4xxClientError())

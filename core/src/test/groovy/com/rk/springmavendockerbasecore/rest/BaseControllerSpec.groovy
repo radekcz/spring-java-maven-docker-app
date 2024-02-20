@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
+import spock.lang.Unroll
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
@@ -22,10 +23,14 @@ class BaseControllerSpec extends Specification {
                 .andExpect(status().is4xxClientError())
     }
 
-    def "should set profile"() {
+    @Unroll
+    def "should set profile #profile"() {
         expect:
-        mvc.perform(post("/api/v1/profile?profile=QA"))
+        mvc.perform(post("/api/v1/profile?profile=${profile}"))
                 .andExpect(status().isOk())
+
+        where:
+        profile << ['QA', 'DEV', 'PROD']
     }
 
     def "ping endpoint should return message"() {

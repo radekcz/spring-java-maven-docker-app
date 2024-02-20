@@ -30,7 +30,6 @@
                 <version>${lombok.version}</version>
             </dependency>
 
-            <!-- test -->
             <dependency>
                 <groupId>org.spockframework</groupId>
                 <artifactId>spock-core</artifactId>

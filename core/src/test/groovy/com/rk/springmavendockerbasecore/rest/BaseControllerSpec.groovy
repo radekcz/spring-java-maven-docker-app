@@ -17,7 +17,7 @@ class BaseControllerSpec extends Specification {
 
     def "ping endpoint should return message"() {
         expect:
-        mvc.perform(get("/api/ping"))
+        mvc.perform(get("/api/v1/ping"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Hello from BaseService"))
     }

@@ -2,7 +2,7 @@ package com.rk.springmavendockerbasecore
 
 import spock.lang.Specification
 
-class BaseSpec extends Specification {
+class ExampleSpec extends Specification {
 
     def "should run test with result #expectedResult"() {
         expect:

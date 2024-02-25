@@ -1,5 +1,7 @@
 app:
   version: 1.0.0-SNAPSHOT
+  authentication:
+    token: dummy-token
 
 management:
   endpoints:

@@ -1,0 +1,3 @@
+app:
+  authentication:
+    token: dummy-test-token

@@ -8,9 +8,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.web.servlet.MockMvc
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import spock.lang.Specification
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
@@ -27,8 +27,7 @@ class SpringMavenDockerBaseAppSpec extends Specification {
 
     def "application should start and should response to health-check"() {
         expect:
-        mockMvc.perform(MockMvcRequestBuilders
-                .get("/actuator/health"))
+        mockMvc.perform(get("/actuator/health"))
                 .andExpect(status().isOk())
     }
 
@@ -37,8 +36,8 @@ class SpringMavenDockerBaseAppSpec extends Specification {
         baseService.getProfile() >> profile
 
         expect:
-        mockMvc.perform(MockMvcRequestBuilders
-                .get("/api/v1/profile"))
+        mockMvc.perform(get("/api/v1/profile")
+                .header("X-AUTH-TOKEN", "dummy-test-token"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("\"${profile}\""))
         where:

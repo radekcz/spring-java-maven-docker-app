@@ -1,5 +1,7 @@
 package com.rk.springmavendockerbasecore.configuration
 
+import com.rk.springmavendockerbasecore.rest.BaseService
+import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
@@ -18,9 +20,22 @@ class SecurityConfigurationSpec extends Specification {
     @Autowired
     private MockMvc mockMvc
 
+    @SpringBean
+    private BaseService baseService = Mock()
+
     def "allow access to unsecured endpoint"() {
         expect:
         mockMvc.perform(get("/actuator/health"))
+                .andExpect(status().isOk())
+    }
+
+    def "should access to secured endpoint with auth-token"() {
+        given:
+        baseService.handlePing() >> "hurray"
+
+        expect:
+        mockMvc.perform(get("/api/v1/ping")
+                .header(SecurityConfiguration.HEADER_X_AUTH_TOKEN, 'dummy-test-token'))
                 .andExpect(status().isOk())
     }
 }

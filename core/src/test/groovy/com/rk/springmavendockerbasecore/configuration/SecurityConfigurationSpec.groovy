@@ -29,7 +29,7 @@ class SecurityConfigurationSpec extends Specification {
                 .andExpect(status().isOk())
     }
 
-    def "should access to secured endpoint with auth-token"() {
+    def "should allow access to secured endpoint with auth-token"() {
         given:
         baseService.handlePing() >> "hurray"
 
@@ -37,5 +37,12 @@ class SecurityConfigurationSpec extends Specification {
         mockMvc.perform(get("/api/v1/ping")
                 .header(SecurityConfiguration.HEADER_X_AUTH_TOKEN, 'dummy-test-token'))
                 .andExpect(status().isOk())
+    }
+
+    def "should deny access to secured endpoint with wrong auth-token"() {
+        expect:
+        mockMvc.perform(get("/api/v1/ping")
+                .header(SecurityConfiguration.HEADER_X_AUTH_TOKEN, 'wrong-token'))
+                .andExpect(status().is4xxClientError())
     }
 }

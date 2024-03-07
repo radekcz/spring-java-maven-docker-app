@@ -1,12 +1,11 @@
 package com.rk.springmavendockerbasecore.rest;
 
+import com.rk.springmavendockerbasecore.rest.model.AsyncTaskStatus;
 import com.rk.springmavendockerbasecore.rest.model.LongRunningTaskResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -22,5 +21,10 @@ public class LongRunningTaskController {
     public LongRunningTaskResponse createLongRunningTask() {
         var taskId = service.createLongRunningTask();
         return new LongRunningTaskResponse(taskId);
+    }
+
+    @GetMapping(value = "tasks/{taskId}")
+    public AsyncTaskStatus geLongRunningTaskStatus(@PathVariable String taskId) {
+        return service.getLongRunningTaskStatus(taskId);
     }
 }

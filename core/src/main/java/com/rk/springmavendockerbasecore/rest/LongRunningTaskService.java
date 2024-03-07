@@ -11,10 +11,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class LongRunningTaskService {
 
+    private static final int EXECUTION_TIME_SECONDS = 10;
+
     @Async
     public void createLongRunningTask(String taskId) {
         Try.run(() -> {
-            Thread.sleep(10*1000);
+            Thread.sleep(EXECUTION_TIME_SECONDS*1000);
             log.info("Long-running task with ID: {} finished.", taskId);
         }).onFailure(e -> log.error("Cannot create a new long-running task with ID: {}", taskId, e));
     }

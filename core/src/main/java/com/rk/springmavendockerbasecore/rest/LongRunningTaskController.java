@@ -20,8 +20,7 @@ public class LongRunningTaskController {
 
     @PostMapping(value = "tasks")
     public LongRunningTaskResponse createLongRunningTask() {
-        var taskId = UUID.randomUUID().toString();
-        service.createLongRunningTask(taskId);
+        var taskId = service.createLongRunningTask();
         return new LongRunningTaskResponse(taskId);
     }
 }

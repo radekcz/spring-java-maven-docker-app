@@ -1,5 +1,6 @@
 package com.rk.springmavendockerbasecore.rest;
 
+import com.rk.springmavendockerbasecore.rest.model.LongRunningTaskResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
@@ -18,9 +19,9 @@ public class LongRunningTaskController {
     private final LongRunningTaskService service;
 
     @PostMapping(value = "tasks")
-    public String createLongRunningTask() {
+    public LongRunningTaskResponse createLongRunningTask() {
         var taskId = UUID.randomUUID().toString();
         service.createLongRunningTask(taskId);
-        return taskId;
+        return new LongRunningTaskResponse(taskId);
     }
 }

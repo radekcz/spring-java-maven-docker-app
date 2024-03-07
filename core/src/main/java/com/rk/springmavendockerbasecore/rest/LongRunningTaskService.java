@@ -15,7 +15,7 @@ public class LongRunningTaskService {
     public void createLongRunningTask(String taskId) {
         Try.run(() -> {
             Thread.sleep(10*1000);
-            log.info("Long-running task finished.");
+            log.info("Long-running task with ID: {} finished.", taskId);
         }).onFailure(e -> log.error("Cannot create a new long-running task with ID: {}", taskId, e));
     }
 }

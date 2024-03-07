@@ -20,10 +20,18 @@
     <properties>
         <lombok.version>1.18.30</lombok.version>
         <spock.version>2.4-M1-groovy-4.0</spock.version>
+        <vavr.version>0.10.4</vavr.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>io.vavr</groupId>
+                <artifactId>vavr</artifactId>
+                <version>${vavr.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>

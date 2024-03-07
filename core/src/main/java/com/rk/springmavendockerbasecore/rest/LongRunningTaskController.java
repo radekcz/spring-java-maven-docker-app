@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 @RequiredArgsConstructor
 @RestController
 @Slf4j
@@ -16,8 +18,9 @@ public class LongRunningTaskController {
     private final LongRunningTaskService service;
 
     @PostMapping(value = "tasks")
-    public void createLongRunningTask() {
-        service.createLongRunningTask();
+    public String createLongRunningTask() {
+        var taskId = UUID.randomUUID().toString();
+        service.createLongRunningTask(taskId);
+        return taskId;
     }
-
 }
